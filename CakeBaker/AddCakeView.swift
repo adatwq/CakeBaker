@@ -20,33 +20,8 @@ struct AddCakeView: View {
     @State private var instructions: String = ""
     @State var cakes: [[String:Any]] = []
     var body: some View {
-        
-        if isActive{
-            VStack{
-                Image("AppLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .padding()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                            withAnimation {
-                                self.isActive = false
-                            }
-                        }
-                    }
-                Text(appName)
-                    .foregroundStyle(Color.gray)
-                    .bold()
-            }
-        }
-        else{
             NavigationStack {
                 VStack(alignment: .leading) {
-                    Text("Add cake")
-                        .bold()
-                        .foregroundStyle(Color.gray)
-                        .padding(.vertical)
                     
                     TextField("Cake Name", text: $cakeName)
                     TextField("Flour (cups)", value: $flour, formatter: NumberFormatter())
@@ -79,32 +54,10 @@ struct AddCakeView: View {
                     
                     Spacer()
                 }
-                
                 .padding(.horizontal)
                 .textFieldStyle(.roundedBorder)
-                .navigationTitle(appName)
-                .navigationDestination(isPresented: $shouldNavigate, destination: {
-                    VStack(alignment: .leading){
-                        List{
-                            ForEach(0..<cakes.count){ index in
-                                HStack{
-                                    VStack{
-                                        Text("\(cakes[index]["cakeName", default: ""])")
-                                    }
-                                }
-                                
-                            }
-                           
-                            
-                        }
-                        Spacer()
-                    }
-                    .navigationTitle("Instructions")
-                    .navigationBarTitleDisplayMode(.inline)
-                })
-                
+                .navigationTitle("Add cake")
             }
-        }
     }
     
     func addCake(){
