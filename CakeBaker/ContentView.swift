@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct Cake: Identifiable{
+    let name: String
+    let flour: Double
+    let sugar: Double
+    let eggs: Int
+    
+    let id: UUID = .init()
+}
+
 struct ContentView: View {
     let appName: String = "Cake Baker"
     @State var cakeName: String = ""
@@ -15,10 +24,9 @@ struct ContentView: View {
     @State var eggs: Int = 3
     @State var isActive = true
     @State var showAddCakeSheet = false
-    @State var cakes: [[String:Any]] = [["cakeName":"Chocolate cake",
-                                         "flour":2.5,
-                                         "sugar":1.25,
-                                         "eggs":3]]
+
+    @State var cakes: [Cake] = [ .init(name: "Chocolate cake" , flour: 2.5, sugar: 1.25, eggs: 3)]
+
     var body: some View {
         NavigationStack {
             Group{
@@ -43,17 +51,17 @@ struct ContentView: View {
                 }
                 else{
                     List{
-                        ForEach(0..<cakes.count, id: \.self){ index in
+                        ForEach(self.cakes){ cake in
                             VStack(alignment: .leading){
-                                Text("\(cakes[index]["cakeName", default: ""])")
+                                Text(cake.name)
                                     .bold()
                                     .padding(.bottom)
                                 HStack{
-                                    Text("\(cakes[index]["flour", default: ""]) flour")
+                                    Text("\(Int(cake.flour)) flour")
                                     Spacer()
-                                    Text("\(cakes[index]["sugar", default: ""]) sugar")
+                                    Text("\(Int(cake.sugar)) sugar")
                                     Spacer()
-                                    Text("\(cakes[index]["eggs", default: ""]) egg(s)")
+                                    Text("\(cake.eggs) egg(s)")
                                 }
                                 .foregroundStyle(Color.gray)
                             }
@@ -117,10 +125,8 @@ struct ContentView: View {
     
     
     func addCake(){
-        let newCake: [String:Any] = ["cakeName":cakeName,
-                                     "flour":flour,
-                                     "sugar":sugar,
-                                     "eggs":eggs]
+        let newCake: Cake = Cake(name: cakeName, flour: flour, sugar: sugar, eggs: eggs)
+        
         self.cakes.append(newCake)
         showAddCakeSheet.toggle()
     }
