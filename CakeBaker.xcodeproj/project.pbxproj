@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DF0A54562C8F09F000BC406D /* CakeBakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A54552C8F09F000BC406D /* CakeBakerApp.swift */; };
-		DF0A54582C8F09F000BC406D /* AddCakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A54572C8F09F000BC406D /* AddCakeView.swift */; };
 		DF0A545A2C8F09F100BC406D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF0A54592C8F09F100BC406D /* Assets.xcassets */; };
 		DF0A545D2C8F09F100BC406D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF0A545C2C8F09F100BC406D /* Preview Assets.xcassets */; };
 		DFC4283D2CA435E700EF1B4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4283C2CA435E700EF1B4B /* ContentView.swift */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		DF0A54522C8F09F000BC406D /* CakeBaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeBaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0A54552C8F09F000BC406D /* CakeBakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeBakerApp.swift; sourceTree = "<group>"; };
-		DF0A54572C8F09F000BC406D /* AddCakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCakeView.swift; sourceTree = "<group>"; };
 		DF0A54592C8F09F100BC406D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF0A545C2C8F09F100BC406D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFC4283C2CA435E700EF1B4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,10 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				DF0A54552C8F09F000BC406D /* CakeBakerApp.swift */,
-				DF0A54572C8F09F000BC406D /* AddCakeView.swift */,
+				DFC4283C2CA435E700EF1B4B /* ContentView.swift */,
 				DF0A54592C8F09F100BC406D /* Assets.xcassets */,
 				DF0A545B2C8F09F100BC406D /* Preview Content */,
-				DFC4283C2CA435E700EF1B4B /* ContentView.swift */,
 			);
 			path = CakeBaker;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0A54582C8F09F000BC406D /* AddCakeView.swift in Sources */,
 				DF0A54562C8F09F000BC406D /* CakeBakerApp.swift in Sources */,
 				DFC4283D2CA435E700EF1B4B /* ContentView.swift in Sources */,
 			);

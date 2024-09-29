@@ -16,9 +16,9 @@ struct ContentView: View {
     @State var isActive = true
     @State var showAddCakeSheet = false
     @State var cakes: [[String:Any]] = [["cakeName":"Chocolate cake",
-                                        "flour":2.5,
-                                        "sugar":1.25,
-                                        "eggs":3]]
+                                         "flour":2.5,
+                                         "sugar":1.25,
+                                         "eggs":3]]
     var body: some View {
         NavigationStack {
             Group{
@@ -107,13 +107,11 @@ struct ContentView: View {
                             .textFieldStyle(.roundedBorder)
                             .navigationTitle("Add cake")
                             .navigationBarTitleDisplayMode(.inline)
-
+                            
                         }
                     })
                 }
-            } 
-
-           
+            }
         }
     }
     
