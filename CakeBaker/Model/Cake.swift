@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Cake: Identifiable{
+    let name: String
+    let flour: Double
+    let sugar: Double
+    let eggs: Int
+    
+    let id: UUID = .init()
+}
